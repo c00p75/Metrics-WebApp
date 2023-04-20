@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { navigation } from '../../redux/countries/countrySlice';
 import './countries.css';
@@ -24,7 +24,7 @@ const Countries = ({ data }) => {
     <ul className="App__grid-container App__country-list p-0">
       {data && data.map((country) => (
         <li key={uuidv4()} className="App__country">
-          <NavLink to={`/${country.continents[0]}/${country.name.common}`} onClick={() => { dispatch(navigation(country.name.common)); }}>
+          <Link to={`/${country.continents[0]}/${country.name.common}`} onClick={() => { dispatch(navigation(country.name.common)); }}>
             <div><img src={country.flags.png} alt="Flag" /></div>
             <div>
               <div className="App__Countries--details d-flex flex-column align-items-end p-1">
@@ -34,18 +34,22 @@ const Countries = ({ data }) => {
                 </p>
               </div>
             </div>
-          </NavLink>
+          </Link>
         </li>
       ))}
-      {!data.length && (
+      {!data && (
         <li><h1>No Results..</h1></li>
       )}
     </ul>
   );
 };
 
+Countries.defaultProps = {
+  data: [],
+};
+
 Countries.propTypes = {
-  data: PropTypes.instanceOf(Object).isRequired,
+  data: PropTypes.instanceOf(Object),
 };
 
 export default Countries;

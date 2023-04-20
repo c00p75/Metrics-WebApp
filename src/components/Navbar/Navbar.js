@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiMenu } from 'react-icons/bi';
-import { useNavigate } from 'react-router-dom';
 import './navbar.css';
 import { searchFocus } from '../../redux/countries/countrySlice';
 
-const Navbar = () => {
+const Navbar = ({ back }) => {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.countries);
-  const navigate = useNavigate();
   const { currentPage } = countries;
   const [inputFocus, setInputFocus] = useState(false);
   const [, setInput] = useState('');
@@ -37,7 +36,7 @@ const Navbar = () => {
 
       {(path !== '/' && !inputFocus) && (
         <>
-          <button type="button" style={{ background: 'none', border: 'none' }} onClick={() => { clearSearch(); navigate(-1); }}>❮</button>
+          <button type="button" style={{ background: 'none', border: 'none' }} onClick={() => { clearSearch(); back(); }}>❮</button>
           <span className="activeRoute px-4">
             {(currentPage !== 'home' && currentPage !== 'continents') ? `${path.split('/')[1]}/${currentPage}` : path.slice(1, path.length)}
           </span>
@@ -57,6 +56,14 @@ const Navbar = () => {
       </div>
     </nav>
   );
+};
+
+Navbar.defaultProps = {
+  back: () => 'back',
+};
+
+Navbar.propTypes = {
+  back: PropTypes.func,
 };
 
 export default Navbar;
