@@ -1,0 +1,66 @@
+.App__home {
+  background-color: var(--color-2);
+}
+
+.App__home--heading {
+  background-image: url('../../assets/bg_2.jpg');
+  background-size: contain;
+  background-position: center;
+  background-color: var(--color-2);
+  height: 40vh;
+  font-size: 1.8em;
+}
+
+.App__home--heading::before {
+  background-color: rgba(16, 35, 71, 0.7);
+}
+
+.overlay .text {
+  position: relative;
+  color: cornsilk;
+  font-size: 1.8em;
+}
+
+.App__grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.App__grid-container a:nth-child(3n-2) li::before,
+.App__grid-container a:nth-child(5) li::before {
+  background-color: rgb(65, 105, 225, 0.6);
+}
+
+.App__grid-container a:last-child li::before,
+.App__grid-container a:nth-child(2) li::before,
+.App__grid-container a:nth-child(3) li::before,
+.App__grid-container a:nth-child(6) li::before {
+  background-color: rgb(99, 148, 237, 0.8);
+}
+
+.App__home-region {
+  background-image: url('../../assets/bg_1.jpg');
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.App__home-region h2 {
+  position: relative;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.App__home-region span {
+  position: relative;
+  color: white;
+}
+
+.App__home-region svg {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: rgba(255, 255, 255);
+  width: 1.5em;
+  height: 1.5em;
+}
