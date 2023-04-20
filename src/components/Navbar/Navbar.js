@@ -13,7 +13,6 @@ const Navbar = () => {
   const [inputFocus, setInputFocus] = useState(false);
   const [, setInput] = useState('');
   const handleInput = (e) => {
-    setInput(e.target.value);
     dispatch(searchFocus(e.target.value));
   };
 
@@ -47,7 +46,7 @@ const Navbar = () => {
       )}
 
       <div className={(currentPage !== 'home' && currentPage !== 'continents') ? 'd-none' : 'App__navbar-searchContainer'} style={{ width: inputFocus ? '100%' : '' }}>
-        <input onFocus={() => setInputFocus(true)} onBlur={() => { setInputFocus(false); clearSearch(); }} onChange={(e) => handleInput(e)} placeholder={path === '/' ? 'Search all...' : `Search ${path.slice(1, path.length)}...`} required="" className="input" name="text" type="text" />
+        <input onFocus={() => setInputFocus(true)} onBlur={() => { setInputFocus(false); setTimeout(() => clearSearch(), 300); }} onChange={(e) => { setInput(e.target.value); handleInput(e); }} placeholder={path === '/' ? 'Search all...' : `Search ${path.slice(1, path.length)}...`} required="" className="input" name="text" type="text" />
         <div className="icon">
           <svg viewBox="0 0 512 512" className="ionicon" xmlns="http://www.w3.org/2000/svg">
             <title>Search</title>

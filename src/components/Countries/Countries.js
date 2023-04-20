@@ -9,7 +9,6 @@ import './countries.css';
 const Countries = ({ data }) => {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.countries);
-
   setTimeout(() => {
     if (countries.search !== '') {
       Array.from(document.querySelectorAll('.App__country')).forEach((i) => {
@@ -23,7 +22,7 @@ const Countries = ({ data }) => {
 
   return (
     <ul className="App__grid-container App__country-list p-0">
-      {data.map((country) => (
+      {data && data.map((country) => (
         <li key={uuidv4()} className="App__country">
           <NavLink to={`/${country.continents[0]}/${country.name.common}`} onClick={() => { dispatch(navigation(country.name.common)); }}>
             <div><img src={country.flags.png} alt="Flag" /></div>
@@ -38,6 +37,9 @@ const Countries = ({ data }) => {
           </NavLink>
         </li>
       ))}
+      {!data.length && (
+        <li><h1>No Results..</h1></li>
+      )}
     </ul>
   );
 };
