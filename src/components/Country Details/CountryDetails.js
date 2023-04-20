@@ -13,7 +13,7 @@ const CountryDetails = () => {
       {countries.length && (
       <>
         <div>
-          <img src={country[0].flags.png} alt="National flag" />
+          <img src={country[0].flags.png} alt="National flag" style={{ width: '100%' }} />
         </div>
         <ul className="p-0 details-list">
           <li>
