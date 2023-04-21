@@ -48,6 +48,9 @@
 
 [Live Demo](https://metrics-web-app.onrender.com)
 
+### Link to Project Presentation
+[Project Presentation](https://www.loom.com/share/953a45918bf14b54a4c6aeee55bdc40d)
+
 ## Getting Started
 
 ### Setup
@@ -77,7 +80,7 @@ Clone this repository to your desired folder:
 👤 **George M'sapenda**
 
 - GitHub: [c00p75](https://github.com/c00p75)
-- LinkedIn: [George M'sapenda](ttps://www.linkedin.com/in/georgemsapenda/?originalSubdomain=zm)
+- LinkedIn: [George M'sapenda](https://www.linkedin.com/in/georgemsapenda)
 
 ## 🔭 Future Features
 
