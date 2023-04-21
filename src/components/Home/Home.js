@@ -41,7 +41,7 @@ const Home = () => {
           <ul className={!data.search ? 'App__grid-container p-0' : 'd-none'}>
             {continents.map((continent) => (
               <NavLink key={continent.continent} to={`/${continent.continent}`}>
-                <li className="App__home-region d-flex flex-column justify-content-center align-items-center overlay">
+                <li className="App__home-region d-flex flex-column justify-content-end align-items-end px-2 py-3 overlay">
                   <h2>{continent.continent}</h2>
                   <span>{continent.population.toLocaleString('en-US')}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
