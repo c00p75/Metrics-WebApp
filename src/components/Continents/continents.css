@@ -1,0 +1,8 @@
+.App__home-region h2 {
+  position: relative;
+  color: white;
+}
+
+.App__home-region::before {
+  background-color: rgb(65, 105, 225, 0.6);
+}
