@@ -13,7 +13,8 @@
 
 body {
   height: 100vh;
-  margin: 0;
+  max-width: 450px;
+  margin: auto;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -28,7 +29,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-1);
 }
 
 a,
