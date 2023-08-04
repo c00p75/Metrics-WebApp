@@ -27,7 +27,7 @@ a {
 
 .App__grid-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .hide {
